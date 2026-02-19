@@ -32,19 +32,64 @@ ul {
     list-style: none;
 }
 
-/* Navigation */
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: var(--secondary);
-    padding: 0 40px;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 1000;
+/* Mobile Navigation (Hamburger) */
+.mobile-menu-btn {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--secondary);
+        flex-direction: column;
+        gap: 0;
+        padding: 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    /* Stack Grids on Mobile */
+    .features-grid, .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Tablet: 2 Columns */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1025px) {
+    /* Desktop: Max Width */
+    .container, nav {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    nav {
+        padding: 0 40px;
+    }
 }
 
 .logo {
