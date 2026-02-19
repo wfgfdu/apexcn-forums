@@ -35,40 +35,45 @@ ul {
 /* Mobile Navigation (Hamburger) */
 .mobile-menu-btn {
     display: none;
-    font-size: 28px; /* Bigger */
+    font-size: 24px;
     cursor: pointer;
-    background: var(--primary); /* Red background */
+    background: var(--primary);
     border: none;
-    color: #FFFFFF; /* White icon */
+    color: #fff;
     padding: 8px 12px;
-    border-radius: 4px; /* Rounded corners */
-    z-index: 2000;
+    border-radius: 4px;
+    z-index: 2001;
+    flex-shrink: 0;
+    margin-left: auto;
 }
 
 /* Utilities */
-.mobile-only { display: none !important; }
-.desktop-only { display: flex !important; }
+.mobile-only { display: none; }
+.desktop-only { display: flex; }
 
 @media (max-width: 768px) {
-    .mobile-only { display: block !important; margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px; }
-    .desktop-only { display: none !important; }
+    .mobile-only { display: block; margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px; }
+    .desktop-only { display: none; }
     
     nav {
         padding: 0 20px;
-        justify-content: space-between; /* Ensure logo left, hamburger right */
-        height: 60px; /* Slights smaller on mobile */
+        height: 60px;
+    }
+
+    .mobile-menu-btn {
+        display: block;
     }
 
     .nav-links {
         display: none;
-        position: fixed; /* Use fixed to cover screen if needed */
+        position: fixed;
         top: 60px;
         left: 0;
         right: 0;
         background: var(--secondary);
         flex-direction: column;
         gap: 0;
-        padding: 20px;
+        padding: 0;
         z-index: 1999;
         box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
@@ -89,15 +94,10 @@ ul {
     .nav-links.active {
         display: flex;
     }
-
-    .mobile-menu-btn {
-        display: block !important;
-        order: 3;
-    }
     
     /* Hide the floating login button if it's still there */
     .nav-user {
-        display: none !important;
+        display: none;
     }
 
     /* Stack Grids on Mobile */
@@ -125,20 +125,31 @@ ul {
     }
 }
 
+/* Base nav styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    background: var(--secondary);
+    height: 70px;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2000;
+}
+
+/* Logo */
 .logo {
-    color: #FFFFFF;
-    font-size: 24px;
-    font-weight: 700;
     display: flex;
     align-items: center;
     gap: 10px;
-    flex-shrink: 0; /* Prevent logo shrinking */
+    flex-shrink: 0;
 }
 
 .logo-icon {
     width: 36px;
     height: 36px;
-    min-width: 36px; /* Enforce width */
+    min-width: 36px;
     background: var(--primary);
     border-radius: 4px;
     display: flex;
@@ -146,7 +157,15 @@ ul {
     justify-content: center;
     font-weight: 700;
     font-size: 18px;
-    line-height: 1; /* Fix vertical alignment */
+    line-height: 1;
+    color: #fff;
+}
+
+.logo span {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    white-space: nowrap;
 }
 
 .nav-links {
