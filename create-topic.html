@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>发布新帖 - Oracle APEX 中文社区</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <div class="logo-icon">AP</div>
+            <span>oracleapex.cn</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="topic-list.html">问题求助</a></li>
+            <li><a href="topic-list.html">新手入门</a></li>
+            <li><a href="topic-list.html">进阶技巧</a></li>
+            <li><a href="topic-list.html">建议反馈</a></li>
+        </ul>
+        <div class="nav-user">
+            <a href="profile.html" class="nav-user" style="color: #fff; font-size: 14px;">
+                <div class="nav-avatar">张</div>
+                <span>张三</span>
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <h1>发布新帖</h1>
+            <p>分享你的问题、经验或见解</p>
+        </section>
+
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">首页</a>
+                <span>/</span>
+                <span>发布新帖</span>
+            </div>
+
+            <div class="editor-container">
+                <div class="card">
+                    <div class="form-group">
+                        <label class="form-label">选择版块</label>
+                        <select class="form-select">
+                            <option value="">请选择版块</option>
+                            <option>问题求助</option>
+                            <option>新手入门</option>
+                            <option>进阶技巧</option>
+                            <option>建议反馈</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">标题</label>
+                        <input type="text" class="form-input" placeholder="请输入帖子标题，简洁明了地描述问题">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">内容</label>
+                        <div class="editor-toolbar">
+                            <button class="toolbar-btn" title="加粗">B</button>
+                            <button class="toolbar-btn" title="斜体"><i>I</i></button>
+                            <button class="toolbar-btn" title="下划线"><u>U</u></button>
+                            <button class="toolbar-btn" title="标题">H</button>
+                            <button class="toolbar-btn" title="链接">🔗</button>
+                            <button class="toolbar-btn" title="图片">📷</button>
+                            <button class="toolbar-btn" title="代码">&lt;/&gt;</button>
+                            <button class="toolbar-btn" title="引用">❝</button>
+                            <button class="toolbar-btn" title="列表">☰</button>
+                            <button class="toolbar-btn" title="有序列表">1.</button>
+                        </div>
+                        <div class="editor-content" contenteditable="true" style="min-height: 300px;">
+                            <p>请详细描述你的问题或分享内容...</p>
+                            <p><br></p>
+                            <p>建议包含：</p>
+                            <ul style="margin-left: 24px; list-style: disc;">
+                                <li>问题背景</li>
+                                <li>已尝试的解决方案</li>
+                                <li>相关错误信息</li>
+                                <li>环境版本信息</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">标签</label>
+                        <input type="text" class="form-input" placeholder="添加标签，用逗号分隔，如: APEX, ORACLE, 23.2">
+                    </div>
+
+                    <div class="editor-options">
+                        <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer;">
+                            <input type="checkbox" style="width: 18px; height: 18px;">
+                            订阅回复通知
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer;">
+                            <input type="checkbox" style="width: 18px; height: 18px;">
+                            设为私密帖子
+                        </label>
+                    </div>
+
+                    <div style="display: flex; gap: 12px; margin-top: 24px;">
+                        <button class="btn-primary" onclick="window.location.href='topic-detail.html'">发布帖子</button>
+                        <button class="btn-secondary" onclick="window.location.href='topic-list.html'">取消</button>
+                        <button class="btn-secondary" style="margin-left: auto;">保存草稿</button>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 24px;">
+                    <h4 style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">发布指南</h4>
+                    <ul style="font-size: 14px; color: var(--text-secondary); line-height: 1.8; margin-left: 20px; list-style: disc;">
+                        <li>请选择合适的版块，便于其他用户发现和帮助</li>
+                        <li>标题应简洁明了，准确描述问题核心</li>
+                        <li>详细描述问题背景、已尝试的解决方案和相关错误信息</li>
+                        <li>使用代码块格式化代码片段</li>
+                        <li>避免重复提问，搜索是否已有类似问题</li>
+                        <li>保持友善和尊重，社区氛围靠大家共同维护</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h4>oracleapex.cn</h4>
+                <p>致力于打造最专业的 Oracle APEX 中文开发者社区。</p>
+            </div>
+            <div class="footer-column">
+                <h5>学习资源</h5>
+                <ul>
+                    <li><a href="topic-list.html">新手入门</a></li>
+                    <li><a href="topic-list.html">视频教程</a></li>
+                    <li><a href="topic-list.html">文档中心</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h5>社区</h5>
+                <ul>
+                    <li><a href="topic-list.html">问题求助</a></li>
+                    <li><a href="topic-list.html">经验分享</a></li>
+                    <li><a href="topic-list.html">进阶技巧</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h5>联系我们</h5>
+                <ul>
+                    <li><a href="topic-list.html">建议反馈</a></li>
+                    <li><a href="topic-list.html">商务合作</a></li>
+                    <li><a href="topic-list.html">关于我们</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 oracleapex.cn. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
