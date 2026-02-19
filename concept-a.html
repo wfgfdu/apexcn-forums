@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oracle APEX 中文社区 - Oracle Classic</title>
+    <style>
+        :root {
+            --primary: #F80000;
+            --primary-dark: #C40000;
+            --secondary: #312D2A;
+            --background: #FFFFFF;
+            --surface: #F5F5F5;
+            --text-primary: #333333;
+            --text-secondary: #666666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text-primary);
+            line-height: 1.5;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--secondary);
+            padding: 0 40px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: #FFFFFF;
+            font-size: 24px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--primary);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 24px 0;
+            border-bottom: 3px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            border-bottom-color: var(--primary);
+        }
+
+        .nav-cta {
+            background-color: var(--primary);
+            color: #FFFFFF;
+            padding: 10px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .nav-cta:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            background: linear-gradient(135deg, var(--surface) 0%, var(--background) 100%);
+            padding: 100px 40px;
+            text-align: center;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: #FFFFFF;
+            padding: 16px 36px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--secondary);
+            padding: 16px 36px;
+            border-radius: 4px;
+            border: 2px solid var(--secondary);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--secondary);
+            color: #FFFFFF;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 40px;
+            background-color: var(--background);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background-color: var(--background);
+            border: 1px solid #E5E5E5;
+            border-radius: 8px;
+            padding: 32px;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            background-color: var(--surface);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--secondary);
+        }
+
+        .feature-card p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: #FFFFFF;
+            padding: 60px 40px 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-brand h4 {
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            color: #999999;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .footer-column h5 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: #999999;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: #FFFFFF;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid #555555;
+            text-align: center;
+            color: #999999;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            .hero-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <div class="logo-icon">AP</div>
+            <span>oracleapex.cn</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">问题求助</a></li>
+            <li><a href="#">新手入门</a></li>
+            <li><a href="#">进阶技巧</a></li>
+            <li><a href="#">建议反馈</a></li>
+        </ul>
+        <a href="#" class="nav-cta">进入论坛</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Oracle APEX 中文社区</h1>
+            <p>全球领先的 low-code 开发平台中文社区。获取帮助、学习技巧、与开发者交流，共同成长。</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn-primary">开始探索</a>
+                <a href="#" class="btn-secondary">了解更多</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">?</div>
+                <h3>APEX 问题求助</h3>
+                <p>遇到开发难题？社区专家和热心开发者随时为您解答各类 Oracle APEX 技术问题。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">N</div>
+                <h3>APEX 新手入门</h3>
+                <p>从零开始的学习路径，系统化教程帮助您快速掌握 APEX 开发技能。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">S</div>
+                <h3>APEX 进阶技巧</h3>
+                <p>深入探索高级特性，分享最佳实践，提升您的 APEX 开发水平。</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h4>oracleapex.cn</h4>
+                <p>致力于打造最专业的 Oracle APEX 中文开发者社区。</p>
+            </div>
+            <div class="footer-column">
+                <h5>学习资源</h5>
+                <ul>
+                    <li><a href="#">新手入门</a></li>
+                    <li><a href="#">视频教程</a></li>
+                    <li><a href="#">文档中心</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h5>社区</h5>
+                <ul>
+                    <li><a href="#">问题求助</a></li>
+                    <li><a href="#">经验分享</a></li>
+                    <li><a href="#">进阶技巧</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h5>联系我们</h5>
+                <ul>
+                    <li><a href="#">建议反馈</a></li>
+                    <li><a href="#">商务合作</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 oracleapex.cn. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
