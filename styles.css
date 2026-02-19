@@ -35,12 +35,13 @@ ul {
 /* Mobile Navigation (Hamburger) */
 .mobile-menu-btn {
     display: none;
-    font-size: 24px;
+    font-size: 28px; /* Bigger */
     cursor: pointer;
-    background: none;
+    background: var(--primary); /* Red background */
     border: none;
-    color: #FFFFFF;
-    padding: 10px;
+    color: #FFFFFF; /* White icon */
+    padding: 8px 12px;
+    border-radius: 4px; /* Rounded corners */
     z-index: 2000;
 }
 
