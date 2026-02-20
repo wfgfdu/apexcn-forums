@@ -1894,8 +1894,31 @@ nav {
     margin-bottom: 18px;
 }
 
-.topic-header h1 {
-    margin-bottom: 10px;
+/* Phase 4: Breadcrumb as Top Navigation */
+.page-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding-top: 50px !important; /* Make room for top breadcrumb */
+}
+
+.breadcrumb {
+    color: var(--text-secondary);
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    opacity: 0.6;
+    letter-spacing: 0.5px;
+}
+
+.breadcrumb span:last-child {
+    color: var(--text-primary);
+    opacity: 1;
+    font-weight: 500;
 }
 
 .topic-info {
