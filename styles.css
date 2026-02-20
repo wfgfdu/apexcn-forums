@@ -548,13 +548,6 @@ main {
     overflow: hidden;
 }
 
-.page-header .breadcrumb {
-    justify-content: center;
-    margin-bottom: 24px;
-    font-size: 14px;
-    opacity: 0.8;
-}
-
 .page-header h1 {
     font-size: 36px;
     font-weight: 700;
@@ -1894,33 +1887,10 @@ nav {
     margin-bottom: 18px;
 }
 
-/* Phase 4: Breadcrumb as Top Navigation */
-.page-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    padding-top: 50px !important; /* Make room for top breadcrumb */
-}
-
-/* Breadcrumb inside page-header (Absolute top) */
-.page-header .breadcrumb {
-    position: absolute;
-    top: 20px;
-    left: 0;
+/* Standard Redwood Breadcrumb */
+.breadcrumb-container {
+    padding: 12px 20px;
     width: 100%;
-    justify-content: center;
-    margin-bottom: 0;
-    font-size: 13px;
-    opacity: 0.6;
-    letter-spacing: 0.5px;
-}
-
-/* Breadcrumb in main container (e.g. topic detail) */
-.container > .breadcrumb {
-    margin-bottom: 24px;
-    justify-content: flex-start;
-    padding-top: 8px; /* Breathing room from nav */
 }
 
 .breadcrumb {
@@ -1928,6 +1898,44 @@ nav {
     align-items: center;
     gap: 8px;
     color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.breadcrumb a {
+    color: var(--text-secondary);
+    transition: color 0.3s;
+}
+
+.breadcrumb a:hover {
+    color: var(--primary);
+}
+
+.breadcrumb span {
+    color: var(--text-secondary);
+}
+
+.breadcrumb span:last-child {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .breadcrumb-container {
+        padding: 10px 16px;
+    }
+    
+    .breadcrumb {
+        font-size: 12px;
+    }
+}
+
+/* Page Header - Cleaned up */
+.page-header {
+    background: linear-gradient(135deg, var(--surface) 0%, var(--background) 100%);
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 0;
 }
 
 .breadcrumb span:last-child {
