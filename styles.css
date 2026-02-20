@@ -1984,4 +1984,75 @@ footer {
     }
 }
 
+/* Redwood-style visual language (phase 3 fine-tune) */
+.container {
+    max-width: 980px;
+}
+
+.topic-content {
+    max-width: 72ch;
+    margin: 0 auto;
+}
+
+.topic-content p,
+.comment-content {
+    text-wrap: pretty;
+}
+
+.topic-info span {
+    color: var(--grey);
+}
+
+.comments-section h3,
+.footer-brand h4 {
+    letter-spacing: 0.02em;
+}
+
+.comment-actions a {
+    color: #7A6F67;
+}
+
+.comment-actions a:hover {
+    color: var(--primary);
+}
+
+.footer-content {
+    align-items: start;
+}
+
+.footer-column a {
+    transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.footer-column a:hover {
+    padding-left: 3px;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .topic-content {
+        max-width: 100%;
+    }
+
+    .topic-content p {
+        line-height: 1.78;
+    }
+
+    .nav-links a {
+        font-weight: 500;
+    }
+
+    .footer-content {
+        gap: 16px;
+    }
+}
+
 
