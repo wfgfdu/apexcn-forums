@@ -1905,6 +1905,20 @@ nav {
     color: var(--text-primary);
 }
 
+@media (max-width: 768px) {
+    /* Fix mobile breadcrumb spacing issue */
+    .container {
+        padding-top: 10px;
+    }
+    
+    .breadcrumb {
+        margin-bottom: 12px;
+        margin-top: 4px;
+        font-size: 13px;
+        opacity: 0.8;
+    }
+}
+
 .topic-author-avatar,
 .topic-avatar,
 .comment-avatar,
