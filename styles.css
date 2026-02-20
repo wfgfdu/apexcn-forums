@@ -544,6 +544,15 @@ main {
     background: linear-gradient(135deg, var(--surface) 0%, var(--background) 100%);
     padding: 60px 40px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header .breadcrumb {
+    justify-content: center;
+    margin-bottom: 24px;
+    font-size: 14px;
+    opacity: 0.8;
 }
 
 .page-header h1 {
@@ -683,7 +692,6 @@ main {
     gap: 8px;
     font-size: 14px;
     color: var(--text-secondary);
-    margin-bottom: 24px;
 }
 
 .breadcrumb a {
@@ -1533,6 +1541,12 @@ footer {
     .page-header {
         padding: 40px 20px;
     }
+
+    .page-header .breadcrumb {
+        margin-bottom: 12px;
+        font-size: 13px;
+    }
+
     .page-header h1 {
         font-size: 28px;
     }
@@ -1903,20 +1917,6 @@ nav {
 
 .breadcrumb span:last-child {
     color: var(--text-primary);
-}
-
-@media (max-width: 768px) {
-    /* Fix mobile breadcrumb spacing issue */
-    .container {
-        padding-top: 10px;
-    }
-    
-    .breadcrumb {
-        margin-bottom: 12px;
-        margin-top: 4px;
-        font-size: 13px;
-        opacity: 0.8;
-    }
 }
 
 .topic-author-avatar,
