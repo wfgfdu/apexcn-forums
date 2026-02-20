@@ -1903,22 +1903,45 @@ nav {
     padding-top: 50px !important; /* Make room for top breadcrumb */
 }
 
-.breadcrumb {
-    color: var(--text-secondary);
+/* Breadcrumb inside page-header (Absolute top) */
+.page-header .breadcrumb {
     position: absolute;
     top: 20px;
     left: 0;
     width: 100%;
-    text-align: center;
+    justify-content: center;
+    margin-bottom: 0;
     font-size: 13px;
     opacity: 0.6;
     letter-spacing: 0.5px;
 }
 
+/* Breadcrumb in main container (e.g. topic detail) */
+.container > .breadcrumb {
+    margin-bottom: 24px;
+    justify-content: flex-start;
+    padding-top: 8px; /* Breathing room from nav */
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+}
+
 .breadcrumb span:last-child {
     color: var(--text-primary);
-    opacity: 1;
     font-weight: 500;
+}
+
+/* Fix detail page breadcrumb spacing */
+@media (max-width: 768px) {
+    .container > .breadcrumb {
+        padding-top: 12px;
+        margin-bottom: 24px;
+        font-size: 13px;
+    }
 }
 
 .topic-info {
